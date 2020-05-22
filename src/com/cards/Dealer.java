@@ -27,23 +27,23 @@ public class Dealer {
 				
 				if (leftDeck.returnSize() == 0) {
 					System.out.println("Nothing to transfer.");
-					continue;
 				}
-				
-				System.out.println("Moving from left to right");
-				Card cardToTransfer = leftDeck.removeCard();
-				rightDeck.addCard(cardToTransfer);
+				else {
+					System.out.println("Moving from left to right");
+					Card cardToTransfer = leftDeck.removeCard();
+					rightDeck.addCard(cardToTransfer);
+				}
 			}
 			else if (input.equals("2")) {
 				
 				if (rightDeck.returnSize() == 0) {
 					System.out.println("Nothing to transfer.");
-					continue;
 				}
-				
-				System.out.println("Moving from right to left");
-				Card cardToTransfer = rightDeck.removeCard();
-				leftDeck.addCard(cardToTransfer);
+				else {
+					System.out.println("Moving from right to left");
+					Card cardToTransfer = rightDeck.removeCard();
+					leftDeck.addCard(cardToTransfer);
+				}
 				
 			}
 			else if (input.equals("3")) {
@@ -54,8 +54,11 @@ public class Dealer {
 				System.out.println("Shuffling right pile");
 				rightDeck.shuffle();;
 			}
+			else if (input.equals("5")) {
+				continue;
+			}
 			else {
-				System.out.println("Invalid input.");
+				System.out.println("Bad input.");
 			}
 		}
 		
